@@ -1,0 +1,8 @@
+{
+  "name": "cardiolipid-pro",
+  "version": "2.0.0",
+  "description": "Guía terapéutica cardiovascular SEC/SEA 2024",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
