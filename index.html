@@ -1160,7 +1160,7 @@ async function doSubscribe() {
     if (!res.ok) throw new Error('Server error ' + res.status);
     const data = await res.json();
     if (data.url) {
-      window.location.href = data.url;
+      // Guardar sesión antes de ir a Stripe if (user) {   localStorage.setItem('cl_pending_pro', 'true');   localStorage.setItem('cl_last_user', JSON.stringify(user)); } window.location.href = data.url;
     } else {
       throw new Error(data.error || 'No URL recibida');
     }
@@ -1612,7 +1612,7 @@ function resetCalc() {
 
 // Auto-activate Pro if returning from Stripe success
 window.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search); if (params.get('pro') === 'true') {   const savedUser = JSON.parse(localStorage.getItem('cl_last_user') || 'null');   if (savedUser) {     savedUser.pro = true;     isPro = true;     localStorage.setItem('cl_user_' + savedUser.email, JSON.stringify(savedUser));     localStorage.removeItem('cl_pending_pro');     loginUser(savedUser);   }   history.replaceState({}, '', '/');   setTimeout(() => alert('¡Pro activado! 🎉'), 800); }
   if (params.get('pro') === 'true') {
     isPro = true;
     if (user) {
