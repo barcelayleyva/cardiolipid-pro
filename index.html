@@ -1754,6 +1754,9 @@ window.addEventListener('DOMContentLoaded', () => {
     history.replaceState({}, '', '/');
   }
 });
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
 </script>
 </body>
 </html>
