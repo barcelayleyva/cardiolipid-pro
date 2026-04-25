@@ -1,0 +1,22 @@
+{
+  "name": "CardioLipid Pro",
+  "short_name": "CardioLipid",
+  "description": "Guía terapéutica en prevención cardiovascular SEC/SEA 2024",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d18",
+  "theme_color": "#080d18",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
